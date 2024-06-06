@@ -32,7 +32,7 @@ public class PigDice {
 	
 	private static void checkCondition(char rollOrHold, int turnScore, Scanner scanner) {
 	
-		while(rollOrHold == 'r' && turnScore<20) {
+		while(rollOrHold == 'r') {
 		
 			System.out.println("\nRoll or hold? (r/h):");
 			
