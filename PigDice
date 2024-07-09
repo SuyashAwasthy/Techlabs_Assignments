@@ -8,10 +8,11 @@ public class PigDice {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Let's Play PIG!\nSee how many turns it takes you to get to 20.\nTurn ends when you hold or roll a 1.\nIf you roll a 1, you lose all points for the turn.\nIf you hold, you save all points for the turn.\n\nLet's start!");
 		int turn = 1;
-		int totalScore = 0;
+		int totalScore = 0, turnScore = 0;
+		char rollOrHold = 'r'; 
 		while(totalScore<20) {
-			int turnScore = 0;
-			char rollOrHold = 'r'; 
+			turnScore = 0;
+			rollOrHold = 'r'; 
 			System.out.println("\nTURN " + turn);
 			while(rollOrHold == 'r') {
 				System.out.println("\nRoll or hold? (r/h):");
@@ -26,7 +27,7 @@ public class PigDice {
 					break;
 				}
 				turnScore += die;
-				if(totalScore + turnScore >= 20) 
+				if(totalScore + turnScore >= 20) //if current turn score + previous score >= 20, then game over.
 					break;
 			}
 			System.out.println("\nScore for turn: " + turnScore);
@@ -35,7 +36,7 @@ public class PigDice {
 			turn++;
 		}
 		System.out.println("\nYou finished in " + (turn-1) + " turn(s)!\n\nGame Over!");
-        scanner.close();
+        	scanner.close();
 	}
 
 }
