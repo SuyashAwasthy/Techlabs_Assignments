@@ -5,20 +5,26 @@ import java.util.Scanner;
 public class MultiplicationOf2dMatrices {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scanner = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 		
-        System.out.println("Enter the number of rows in matrix1: ");
-        int rows1 = scanner.nextInt();
+     	int rows1 = 0, columns1 = 0, columns2 = 0;
+	while(rows1<=0) {
+		System.out.println("Enter the number of rows in matrix1 (+ve value): ");
+        	rows1 = scanner.nextInt();
+	}
         
-        System.out.println("Enter the number of columns in matrix1: ");
-        int columns1 = scanner.nextInt();
+	while(columns1<=0) {
+		System.out.println("Enter the number of columns in matrix1 (+ve value): ");
+		columns1 = scanner.nextInt();
+	}
         
         System.out.println("Number of rows in matrix2 =  "+columns1); //for multiplication of matrices, row2 must be equal to columns1 else multiplication is not possible
         int rows2 = columns1;										  
         
-        System.out.println("Enter the number of columns in matrix2: ");
-        int columns2 = scanner.nextInt();
+        while(columns2<=0) {
+        	System.out.println("Enter the number of columns in matrix2 (+ve value): ");
+        	columns2 = scanner.nextInt();
+        }
         
         int array1[][] = new int[rows1][columns1];
         int array2[][] = new int[rows2][columns2];
